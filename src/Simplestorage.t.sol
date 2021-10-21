@@ -12,6 +12,16 @@ contract SimplestorageTest is DSTest {
         simplestorage = new Simplestorage();
     }
 
+    function testGetInitialValue() public {
+        assertTrue(simplestorage.get() == 0);
+    }
+
+    function testSetValue() public {
+        uint x = 300;
+        simplestorage.set(x);
+        assertTrue(simplestorage.get() == 300);
+    }
+
     function testFail_basic_sanity() public {
         assertTrue(false);
     }
